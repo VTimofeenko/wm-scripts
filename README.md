@@ -9,6 +9,10 @@ This is a collection of scripts to be used with tmux, i3-gaps and i3blocks.
 * `media-sound/pavucontrol` for `volume`
 * [`app-misc/headsetcontrol`](https://github.com/Sapd/HeadsetControl)[::nitratesky](https://github.com/SabbathHex/nitratesky) for `headset_ctl`
 
+# Installation
+
+There is an [ebuild](https://github.com/SabbathHex/nitratesky/blob/master/x11-misc/SH-wm-scripts/SH-wm-scripts-9999.ebuild) available in nitratesky overlay. Alternatively, the scripts may be downloaded and used on their own.
+
 # Structure
 ## i3blocks
 * `battery` — displays battery status. Requires battery number as the argument
