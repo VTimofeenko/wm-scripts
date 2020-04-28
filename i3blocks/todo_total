@@ -1,0 +1,12 @@
+#!/bin/sh
+
+#sed -n '/13:40:43/,/13:41:49/p' somelogfile.log | wc -l
+
+if systemctl is-active --quiet work_location.target; then
+    todo_file="${HOME}/Documents/todofiles/work.todofile"
+else
+    todo_file="${HOME}/Documents/todofiles/daily.todofile"
+fi
+todo_items=$(perl -ne '(/^# TODO/ .. /^# (FOLLOWUP|DONE)/) && print' "$todo_file" | grep -cEv "^#|^$")
+
+printf "todo: %s items" "$todo_items"

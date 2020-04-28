@@ -1,0 +1,7 @@
+#!/bin/sh
+
+repo_path="${HOME}/.config"
+
+if ! git --work-tree="${repo_path}" --git-dir="${repo_path}"/.git diff-index --quiet HEAD --; then
+    printf "<span color='#ff0000'>config dirty</span>"
+fi

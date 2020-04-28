@@ -1,0 +1,14 @@
+#!/bin/sh
+# Original by Luke Smith
+# https://github.com/LukeSmithxyz/LARBS/
+
+
+case $BLOCK_BUTTON in
+	1) $TERMINAL -e nmtui ;;
+esac
+
+[ "$(cat /sys/class/net/w*/operstate)" = 'down' ] && wifiicon="📡"
+
+[ -z "${wifiicon+var}" ] && wifiicon=$(grep "^\s*w" /proc/net/wireless | awk '{ printf "📶%3d%%", int($3 * 100 / 70) }')
+
+printf "%s\n" "$wifiicon"

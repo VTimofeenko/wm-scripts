@@ -1,0 +1,4 @@
+#!/bin/sh
+repo_path="$1"
+
+git --work-tree="${repo_path}" --git-dir="${repo_path}"/.git diff-index --quiet HEAD --

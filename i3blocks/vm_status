@@ -1,0 +1,7 @@
+#!/bin/sh
+
+vm_status=$(virsh list --all | grep "$1" | awk '{print $3}')
+
+if [ "$vm_status" = "running" ]; then
+    printf "VM up"
+fi

@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if systemctl is-active --quiet work_location.target; then
+    todo_file="${HOME}/Documents/todofiles/work.todofile"
+else
+    todo_file="${HOME}/Documents/todofiles/daily.todofile"
+fi
+
+next_item=$( grep -A1 "^# TODO" "$todo_file" | tail -n1 )
+if ${next_item:-3} == "[!]"; then
+    color="#ff0000"
+else
+    color="#87ffaf"
+fi
+
+printf "<span color='%s'>now doing: %s</span>" "$color" "$next_item"
