@@ -1,3 +1,20 @@
 #!/bin/sh
 
-headsetcontrol -c -b
+battery_value=$(headsetcontrol -c -b)
+# Below variables provide levels over which the corresponding color will be applied
+# E.g. if battery level is over 50 - the indicator is green
+green_cutoff=50
+yellow_cutoff=20
+red_cutoff=0
+
+span_color=""
+
+if [ "$battery_value" -ge "$green_cutoff" ]; then
+    span_color="#000000"
+elif [ "$battery_value" -ge "$yellow_cutoff" ]; then
+    span_color="#ffaf00"
+elif [ "$battery_value" -ge "$red_cutoff" ]; then
+    span_color="#cc0403"
+fi
+
+printf "<span color='%s'>%s</span>" "$span_color" "$battery_value"
