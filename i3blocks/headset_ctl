@@ -10,7 +10,7 @@ red_cutoff=0
 span_color=""
 
 if [ "$battery_value" -ge "$green_cutoff" ]; then
-    span_color="#000000"
+    span_color="#ffffff"
 elif [ "$battery_value" -ge "$yellow_cutoff" ]; then
     span_color="#ffaf00"
 elif [ "$battery_value" -ge "$red_cutoff" ]; then
