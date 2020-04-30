@@ -3,3 +3,8 @@ Add screenshots
 # i3-blocks
 * `clock`: more persistent dropdown for calendar?
 * `volume`: move to different icons and add some different mute mechanism
+* `headset_ctl`: handle absence of headphones properly. Handle "Charging" state
+
+# i3-helpers
+* `toggle_gaps.sh`: 10 (default gaps value) needs to be taken from i3 config somehow
+* `scrnsht_ctl`: needs to handle selection cancel

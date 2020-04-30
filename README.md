@@ -8,12 +8,22 @@ This is a collection of scripts to be used with tmux, i3-gaps and i3blocks.
 * `media-sound/pulsemixer` for `volume`
 * `media-sound/pavucontrol` for `volume`
 * [`app-misc/headsetcontrol`](https://github.com/Sapd/HeadsetControl)[::nitratesky](https://github.com/SabbathHex/nitratesky) for `headset_ctl`
-
+* `x11-misc/j4-dmenu-desktop` for the launcher
+* `media-gfx/maim` for `scrnsht_ctl`
+* `x11-misc/xvkbd` for `noctrlq.sh` and `ctrlshiftc.sh`
 # Installation
 
 There is an [ebuild](https://github.com/SabbathHex/nitratesky/blob/master/x11-misc/SH-wm-scripts/SH-wm-scripts-9999.ebuild) available in nitratesky overlay. Alternatively, the scripts may be downloaded and used on their own.
 
 # Structure
+## i3-helpers
+
+* `j4-launcher.sh` — `j4-dmenu-desktop`-based launcher, capable of filtering out unneeded desktop files
+* `ctrlshiftc.sh` — catches `Ctrl+Shift+c` when sent to Firefox and resends normal `Ctrl+c`
+* `noctrlq.sh` — stops Firefox from exiting when `Ctrl+q` is pressed
+* `scrnsht_ctl` — small utility to capture screenshots. By default uses darken shader to darken the rest of the screen
+* `toggle_gaps.sh` — script to toggle gaps on the current workspace, requires `i3-gaps`
+
 ## i3blocks
 * `battery` — displays battery status. Requires battery number as the argument
 * `clock` — the clock
