@@ -1,6 +1,9 @@
 # Description
 This is a collection of scripts to be used with tmux, i3-gaps and i3blocks.
 
+i3blocks looks like this:
+![alt text](https://github.com/SabbathHex/wm-scripts/raw/master/i3blocksexample.png "i3blocks example")
+
 # Dependencies
 * `app-emulation/libvirt` for `vm_status`
 * `sys-apps/lm-sensors` for `cpu`
