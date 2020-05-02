@@ -11,10 +11,16 @@ span_color=""
 
 if [ "$battery_value" -ge "$green_cutoff" ]; then
     span_color="#ffffff"
+    icon=""
 elif [ "$battery_value" -ge "$yellow_cutoff" ]; then
     span_color="#ffaf00"
+    icon=""
 elif [ "$battery_value" -ge "$red_cutoff" ]; then
     span_color="#cc0403"
+    icon=""
+elif [ "$battery_value" -eq -1 ]; then # At the time of writing, -1 = "Charging"
+    span_color="#00ff00"
+    icon=""
 fi
 
-printf "<span color='%s'>%s</span>" "$span_color" "$battery_value"
+printf "<span color='%s'>%s</span>" "$span_color" "$icon"
