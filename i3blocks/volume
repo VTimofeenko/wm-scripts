@@ -24,4 +24,19 @@ else
 	icon="🔉"
 fi
 
-printf "%s %s%%\n" "$icon" "${vol}"
+
+if [ "$vol" -gt "80" ]; then
+    bars="▁▃▅▇█"
+elif [ "$vol" -gt "60" ]; then
+    bars="▁▃▅▇ "
+elif [ "$vol" -gt "40" ]; then
+    bars="▁▃▅  "
+elif [ "$vol" -gt "20" ]; then
+    bars="▁▃   "
+elif [ "$vol" -gt "0" ]; then
+    bars="▁    "
+else
+	bars="     "
+fi
+
+printf "%s %s\n" "$icon" "${bars}"
