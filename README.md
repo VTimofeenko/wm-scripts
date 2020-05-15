@@ -2,7 +2,8 @@
 This is a collection of scripts to be used with tmux, i3-gaps and i3blocks.
 
 i3blocks looks like this:
-![alt text](https://github.com/SabbathHex/wm-scripts/raw/master/i3blocksexample.png "i3blocks example")
+
+![i3blocks example](assets/i3blocksexample.png "i3blocks example")
 
 # Dependencies
 * `app-emulation/libvirt` for `vm_status`
@@ -14,6 +15,9 @@ i3blocks looks like this:
 * `x11-misc/j4-dmenu-desktop` for the launcher
 * `media-gfx/maim` for `scrnsht_ctl`
 * `x11-misc/xvkbd` for `noctrlq.sh` and `ctrlshiftc.sh`
+* `app-misc/tmux` for tmux helpers
+* `sys-apps/etckeeper` for monitoring `/etc/` repository
+
 # Installation
 
 There is an [ebuild](https://github.com/SabbathHex/nitratesky/blob/master/x11-misc/SH-wm-scripts/SH-wm-scripts-9999.ebuild) available in nitratesky overlay. Alternatively, the scripts may be downloaded and used on their own.
@@ -34,7 +38,7 @@ There is an [ebuild](https://github.com/SabbathHex/nitratesky/blob/master/x11-mi
 * `config_repo_status` — I keep my `${HOME}/.config` as a git repository and if something is changed there and is not commited, this block appears on i3blocks bar.
 * `current_language` — shows the current language using `xkblayout-state`
 * `headset_ctl` — shows battery status for [compatible headphones](https://github.com/Sapd/HeadsetControl).
-* `internet` — shows wifi signal strength
+* `internet` — shows WiFi signal strength
 * `todo_next` — block for the next item in [vim todolist](https://github.com/SabbathHex/vim-todofile).
 * `todo_total` — block for the total amount of items in [vim todolist](https://github.com/SabbathHex/vim-todofile).
 * `vm_status` — uses `virsh` to check if VM from the argument is running
@@ -58,3 +62,16 @@ cpu: requires an argument in `jq` compatible format. E.g. for the following outp
 ```
 the argument should be `'."k10temp-pci-00c3"."Tdie"."temp1_input" | round'` to produce output `38 C`
 
+## Tmux
+
+* `config-status.sh` — provides a widget that can tell if `${HOME}/.config` repository has uncommited changes
+    ![Image](assets/config-status.png)
+
+* `etckeeper-status.sh` — provides a tmux widget that can tell if the `/etc` directory has uncommited changes
+    ![Image](assets/etckeeper-status.png)
+
+* `sensor.sh` — provides CPU temperature
+    ![](assets/sensor.png)
+
+* `uptime.sh` — provide `uptime` output
+    ![](assets/uptime.png)
