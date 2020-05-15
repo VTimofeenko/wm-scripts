@@ -75,3 +75,5 @@ the argument should be `'."k10temp-pci-00c3"."Tdie"."temp1_input" | round'` to p
 
 * `uptime.sh` — provide `uptime` output
     ![](assets/uptime.png)
+
+Portage clean is based on `config-status.sh` and checks the state of `/etc/portage` repository
