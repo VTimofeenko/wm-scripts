@@ -70,7 +70,7 @@ the argument should be `'."k10temp-pci-00c3"."Tdie"."temp1_input" | round'` to p
 * `etckeeper-status.sh` — provides a tmux widget that can tell if the `/etc` directory has uncommited changes
     ![Image](assets/etckeeper-status.png)
 
-* `sensor.sh` — provides CPU temperature
+* `sensor.sh` — provides CPU temperature, see `cpu_temp` above. `tmux.conf` makes it a little hard to escape parameters properly, so this is best used in a wrapper script
     ![](assets/sensor.png)
 
 * `uptime.sh` — provide `uptime` output
