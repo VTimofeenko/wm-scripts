@@ -31,7 +31,7 @@ There is an [ebuild](https://github.com/SabbathHex/nitratesky/blob/master/x11-mi
 * `noctrlq.sh` — stops Firefox from exiting when `Ctrl+q` is pressed
 * `scrnsht_ctl` — small utility to capture screenshots. By default uses darken shader to darken the rest of the screen
 * `toggle_gaps.sh` — script to toggle gaps on the current workspace, requires `i3-gaps`
-* `layout_toggle.sh` — script that toggles keyboard layouts, sends notification using `dunstify` and changes keyboard layouts in specified Xephyrs running inside firejails.
+* `layout_toggle.sh` — script that toggles keyboard layouts, sends notification using `dunstify` and changes keyboard layouts in specified Xephyrs running inside firejails. Requires running Xephyrs to have the same set of keyboard layouts as the host xorg-server in the same order.
 
 ## i3blocks
 * `battery` — displays battery status. Requires battery number as the argument
