@@ -17,6 +17,7 @@ i3blocks looks like this:
 * `x11-misc/xvkbd` for `noctrlq.sh` and `ctrlshiftc.sh`
 * `app-misc/tmux` for tmux helpers
 * `sys-apps/etckeeper` for monitoring `/etc/` repository
+* `x11-misc/dunst` for notifications
 
 # Installation
 
@@ -30,6 +31,7 @@ There is an [ebuild](https://github.com/SabbathHex/nitratesky/blob/master/x11-mi
 * `noctrlq.sh` — stops Firefox from exiting when `Ctrl+q` is pressed
 * `scrnsht_ctl` — small utility to capture screenshots. By default uses darken shader to darken the rest of the screen
 * `toggle_gaps.sh` — script to toggle gaps on the current workspace, requires `i3-gaps`
+* `layout_toggle.sh` — script that toggles keyboard layouts, sends notification using `dunstify` and changes keyboard layouts in specified Xephyrs running inside firejails.
 
 ## i3blocks
 * `battery` — displays battery status. Requires battery number as the argument
