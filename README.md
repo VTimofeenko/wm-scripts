@@ -37,7 +37,7 @@ There is an [ebuild](https://github.com/SabbathHex/nitratesky/blob/master/x11-mi
 * `battery` — displays battery status. Requires battery number as the argument
 * `clock` — the clock
 * `cpu_temp` — cpu temp, requires an argument (see below)
-* `config_repo_status` — I keep my `${HOME}/.config` as a git repository and if something is changed there and is not commited, this block appears on i3blocks bar.
+* `config_repo_status` — I keep my `${HOME}/.config` as a git repository and if something is changed there and is not commited, this block appears on i3blocks bar. If clicked, it opens up `$TERMINAL` at the repo location.
 * `current_language` — shows the current language using `xkblayout-state`
 * `headset_ctl` — shows battery status for [compatible headphones](https://github.com/Sapd/HeadsetControl).
 * `internet` — shows WiFi signal strength

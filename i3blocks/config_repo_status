@@ -3,7 +3,7 @@
 repo_path="${HOME}/.config"
 
 case $BLOCK_BUTTON in
-    1) setsid "$TERMINAL" -e "cd ${repo_path}";;
+    1) python -c "import subprocess; subprocess.run('$TERMINAL', cwd='$repo_path')";;
 esac
 
 if ! git --work-tree="${repo_path}" --git-dir="${repo_path}"/.git diff-index --quiet HEAD --; then
