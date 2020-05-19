@@ -2,7 +2,6 @@ Add more screenshots
 
 # i3-blocks
 * `clock`: more persistent dropdown for calendar?
-* `volume`: move to different icons and add some different mute mechanism
 * `headset_ctl`: handle absence of headphones properly.
 * Add something to detect Wacom tablet
 
