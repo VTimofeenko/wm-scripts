@@ -1,16 +1,32 @@
-#!/bin/sh
+#!/bin/env bash
+# Script that returns the first item in TODO section of the file specified either
+# as $1 or the hardcoded one
+# Bash is required for shell indexing
 
-if systemctl is-active --quiet work_location.target; then
-    todo_file="${HOME}/Documents/todofiles/work.todofile"
+
+if [ -z "$1" ]; then
+    if ! [ -x "$(command -v systemctl)" ]; then
+        todo_file="${HOME}/Documents/todofiles/work.todofile"
+    else
+        # Relies on custom-made work_location systemctl target if it is present
+        if systemctl is-active --quiet work_location.target; then
+            todo_file="${HOME}/Documents/todofiles/work.todofile"
+        else
+            todo_file="${HOME}/Documents/todofiles/daily.todofile"
+        fi
+    fi
 else
-    todo_file="${HOME}/Documents/todofiles/daily.todofile"
+    todo_file=$1
 fi
 
 next_item=$( grep -A1 "^# TODO" "$todo_file" | tail -n1 )
-if ${next_item:-3} == "[!]"; then
-    color="#ff0000"
-else
-    color="#87ffaf"
+if [ -n "$next_item" ]; then
+    important_flag=$(printf %s "$next_item" | tail -c 3)
+    if [ "${important_flag}" = "(!)" ]; then
+        color="#ff0000"
+    else
+        color="#87ffaf"
+    fi
+    printf "<span color='%s'>now doing: %s</span>" "$color" "$next_item"
 fi
 
-printf "<span color='%s'>now doing: %s</span>" "$color" "$next_item"

@@ -1,12 +1,22 @@
 #!/bin/sh
+# Script that checks either the supplied todo file or hardcoded one
+# and returns how many items are in TODO section
 
-#sed -n '/13:40:43/,/13:41:49/p' somelogfile.log | wc -l
-
-if systemctl is-active --quiet work_location.target; then
-    todo_file="${HOME}/Documents/todofiles/work.todofile"
+if [ -z "$1" ]; then
+    if ! [ -x "$(command -v systemctl)" ]; then
+        todo_file="${HOME}/Documents/todofiles/work.todofile"
+    else
+        # Relies on custom-made work_location systemctl target if it is present
+        if systemctl is-active --quiet work_location.target; then
+            todo_file="${HOME}/Documents/todofiles/work.todofile"
+        else
+            todo_file="${HOME}/Documents/todofiles/daily.todofile"
+        fi
+    fi
 else
-    todo_file="${HOME}/Documents/todofiles/daily.todofile"
+    todo_file=$1
 fi
+
 todo_items=$(perl -ne '(/^# TODO/ .. /^# (FOLLOWUP|DONE)/) && print' "$todo_file" | grep -cEv "^#|^$")
 
 printf "todo: %s items" "$todo_items"
