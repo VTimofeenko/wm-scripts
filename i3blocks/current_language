@@ -1,4 +1,8 @@
 #!/bin/sh
 
-xkblayout-state print %s
+case $BLOCK_BUTTON in
+	1) /usr/libexec/SH-wm-scripts/i3-helpers/layout_toggle.sh ;;
+	2) xkblayout-state set +1 ;;
+esac
 
+xkblayout-state print %s

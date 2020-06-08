@@ -20,7 +20,7 @@ toggle_layout_in_firejail() {
 }
 
 send_notification() {
-dunstify -u low -r 1000 -t 800 -a 'Input layout' "$1"
+    dunstify -u low -r 1000 -t 800 -a 'Input layout' "$1"
 }
 
 $kb_layout_toggle && pkill -SIGRTMIN+11 i3blocks
