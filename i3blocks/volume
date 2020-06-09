@@ -5,11 +5,10 @@
 pulsemixer_cmd="pulsemixer"
 
 case $BLOCK_BUTTON in
-	1) setsid "$TERMINAL" -e ${pulsemixer_cmd} & ;;
-	2) ${pulsemixer_cmd} --toggle-mute ;;
-	3) pavucontrol --class=floating_pavucontrol;;
-	4) ${pulsemixer_cmd} --change-volume +5 ;;
-	5) ${pulsemixer_cmd} --change-volume -5 ;;
+    1) setsid -f pavucontrol --class=floating_pavucontrol;;
+    2) ${pulsemixer_cmd} --toggle-mute ;;
+    4) ${pulsemixer_cmd} --change-volume +5 ;;
+    5) ${pulsemixer_cmd} --change-volume -5 ;;
 esac
 
 [ "$(${pulsemixer_cmd} --get-mute)" = "1" ] && printf "🔇\\n" && exit
@@ -17,11 +16,11 @@ esac
 vol=$(${pulsemixer_cmd} --get-volume | awk '{print $1}')
 
 if [ "$vol" -gt "70" ]; then
-	icon="🔊"
+    icon="🔊"
 elif [ "$vol" -lt "30" ]; then
-	icon="🔈"
+    icon="🔈"
 else
-	icon="🔉"
+    icon="🔉"
 fi
 
 
@@ -36,7 +35,7 @@ elif [ "$vol" -gt "20" ]; then
 elif [ "$vol" -gt "0" ]; then
     bars="▁    "
 else
-	bars="     "
+    bars="     "
 fi
 
 printf "%s %s\n" "$icon" "${bars}"
