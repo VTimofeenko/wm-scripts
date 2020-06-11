@@ -6,13 +6,7 @@
 # Show 🌐 if connected to ethernet or ❎ if none.
 
 case $BLOCK_BUTTON in
-	1) setsid "$TERMINAL" -e nmtui & ;;
-	3) notify-send "🌐 Internet module" "\- Click to connect
-📡: no wifi connection
-📶: wifi connection with quality
-❎: no ethernet
-🌐: ethernet working
-" ;;
+	1) setsid -f nohup "$TERMINAL" -e nmtui ;;
 esac
 
 case "$(cat /sys/class/net/w*/operstate 2>/dev/null)" in

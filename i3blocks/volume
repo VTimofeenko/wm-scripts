@@ -5,7 +5,7 @@
 pulsemixer_cmd="pulsemixer"
 
 case $BLOCK_BUTTON in
-    1) setsid -f pavucontrol --class=floating_pavucontrol;;
+    1) setsid -f nohup pavucontrol --class=floating_pavucontrol > /dev/null 2>&1 ;;
     2) ${pulsemixer_cmd} --toggle-mute ;;
     4) ${pulsemixer_cmd} --change-volume +5 ;;
     5) ${pulsemixer_cmd} --change-volume -5 ;;
