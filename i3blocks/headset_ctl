@@ -7,6 +7,10 @@ green_cutoff=50
 yellow_cutoff=20
 red_cutoff=0
 
+case $BLOCK_BUTTON in
+    1) dunstify -i audio-headset -u low -a "Headset battery" "${battery_value}%"
+esac
+
 span_color=""
 
 if [ "$battery_value" -ge "$green_cutoff" ]; then
