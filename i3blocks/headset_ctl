@@ -8,7 +8,8 @@ yellow_cutoff=20
 red_cutoff=0
 
 case $BLOCK_BUTTON in
-    1) dunstify -i audio-headset -u low -a "Headset battery" "${battery_value}%"
+    1) dunstify -i audio-headset -u low -a "Headset battery" "${battery_value}%";;
+    2) headsetcontrol -l 0 -s 100 && headsetcontrol -n 1 && dunstify -i audio-headset -u low -a "Headset config" "LED disabled, feedback on"
 esac
 
 span_color=""
