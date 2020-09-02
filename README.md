@@ -32,6 +32,7 @@ There is an [ebuild](https://github.com/SabbathHex/nitratesky/blob/master/x11-mi
 * `scrnsht_ctl` — small utility to capture screenshots. By default uses darken shader to darken the rest of the screen
 * `toggle_gaps.sh` — script to toggle gaps on the current workspace, requires `i3-gaps`
 * `layout_toggle.sh` — script that toggles keyboard layouts, sends notification using `dunstify` and changes keyboard layouts in specified Xephyrs running inside firejails. Requires running Xephyrs to have the same set of keyboard layouts as the host xorg-server in the same order.
+* `toggle_output_focus.sh` — script to toggle focus between multiple outputs supplied to its parameters.
 
 ## i3blocks
 * `battery` — displays battery status. Requires battery number as the argument
