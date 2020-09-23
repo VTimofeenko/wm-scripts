@@ -34,6 +34,20 @@ There is an [ebuild](https://github.com/SabbathHex/nitratesky/blob/master/x11-mi
 * `layout_toggle.sh` — script that toggles keyboard layouts, sends notification using `dunstify` and changes keyboard layouts in specified Xephyrs running inside firejails. Requires running Xephyrs to have the same set of keyboard layouts as the host xorg-server in the same order.
 * `toggle_output_focus.sh` — script to toggle focus between multiple outputs supplied to its parameters.
 
+    Example binding:
+
+    ```
+    bindsym $mod+Escape exec --no-startup-id $helper_path/toggle_output_focus.sh DP-0 DVI-D-0
+    ```
+
+* `move_ws_to_output.sh` — script to move workspace to the next output and focus that output.
+
+    Example binding:
+
+    ```
+    bindsym $mod+Shift+Tab exec --no-startup-id $helper_path/move_ws_to_output.sh DP-0 DVI-D-0
+    ```
+
 ## i3blocks
 * `battery` — displays battery status. Requires battery number as the argument
 * `clock` — the clock
