@@ -37,15 +37,19 @@ There is an [ebuild](https://github.com/SabbathHex/nitratesky/blob/master/x11-mi
     Example binding:
 
     ```
-    bindsym $mod+Escape exec --no-startup-id $helper_path/toggle_output_focus.sh DP-0 DVI-D-0
+    # Move focus DP-0 > DP-1 > DVI-D-0 > DP-0 ...
+    bindsym $mod+Escape exec --no-startup-id $helper_path/toggle_output_focus.sh DP-0 DP-1 DVI-D-0
     ```
 
-* `move_ws_to_output.sh` — script to move workspace to the next output and focus that output.
+* `move_obj_to_output.sh` — script to move workspace or a container to the next output and focus that output.
 
     Example binding:
 
     ```
-    bindsym $mod+Shift+Tab exec --no-startup-id $helper_path/move_ws_to_output.sh DP-0 DVI-D-0
+    # move focused workspace DP-0 > DP-1 > DVI-D-0 > DP-0 ...
+    bindsym $mod+Shift+Tab exec --no-startup-id $helper_path/move_obj_to_output.sh workspace DP-0 DP-1 DVI-D-0
+    # move focused container DP-0 > DP-1 > DVI-D-0
+    bindsym $mod+Shift+Tab exec --no-startup-id $helper_path/move_obj_to_output.sh container DP-0 DP-1 DVI-D-0
     ```
 
 ## i3blocks
