@@ -18,6 +18,7 @@ i3blocks looks like this:
 * `app-misc/tmux` for tmux helpers
 * `sys-apps/etckeeper` for monitoring `/etc/` repository
 * `x11-misc/dunst` for notifications
+* [`app-office/todoman`](https://github.com/pimutils/todoman)::[nitratesky](https://github.com/SabbathHex/nitratesky) for todo display
 
 # Installation
 
@@ -64,6 +65,7 @@ There is an [ebuild](https://github.com/SabbathHex/nitratesky/blob/master/x11-mi
 * `todo_total` — block for the total amount of items in [vim todolist](https://github.com/SabbathHex/vim-todofile).
 * `vm_status` — uses `virsh` to check if VM from the argument is running
 * `volume` — shows volume level and can launch `pulsemixer` and `pavucontrol`
+* `todoman` — shows tasks from `app-office/todoman` list
 
 ### `cpu_temp`
 cpu: requires an argument in `jq` compatible format. E.g. for the following output:

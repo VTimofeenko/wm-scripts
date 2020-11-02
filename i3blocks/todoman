@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Name to print next to the block
+BLOCK_NAME=${1}
+# name of the list from todoman
+LIST_NAME=${2}
+
+TASK_COUNT=$(/usr/bin/todo --porcelain list "${LIST_NAME}" | jq -j length)
+
+echo -n "${BLOCK_NAME}: ${TASK_COUNT} tasks"
