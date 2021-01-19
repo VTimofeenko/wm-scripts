@@ -22,7 +22,7 @@ i3blocks looks like this:
 
 # Installation
 
-There is an [ebuild](https://github.com/SabbathHex/nitratesky/blob/master/x11-misc/SH-wm-scripts/SH-wm-scripts-9999.ebuild) available in nitratesky overlay. Alternatively, the scripts may be downloaded and used on their own.
+There is an [ebuild](https://github.com/VTimofeenko/nitratesky/blob/master/x11-misc/SH-wm-scripts/SH-wm-scripts-9999.ebuild) available in nitratesky overlay. Alternatively, the scripts may be downloaded and used on their own.
 
 # Structure
 ## i3-helpers
