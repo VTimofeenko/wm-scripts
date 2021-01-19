@@ -17,7 +17,7 @@ i3blocks looks like this:
 * `x11-misc/xvkbd` for `noctrlq.sh` and `ctrlshiftc.sh`
 * `app-misc/tmux` for tmux helpers
 * `sys-apps/etckeeper` for monitoring `/etc/` repository
-* `x11-misc/dunst` for notifications
+* `x11-misc/dunst`, v>=1.5.0 for notifications
 * [`app-office/todoman`](https://github.com/pimutils/todoman)::[nitratesky](https://github.com/SabbathHex/nitratesky) for todo display
 
 # Installation
@@ -52,6 +52,7 @@ There is an [ebuild](https://github.com/VTimofeenko/nitratesky/blob/master/x11-m
     # move focused container DP-0 > DP-1 > DVI-D-0
     bindsym $mod+Shift+Tab exec --no-startup-id $helper_path/move_obj_to_output.sh container DP-0 DP-1 DVI-D-0
     ```
+* `dunstctl_toggle_notify.sh` — displays a notification and toggles the state of dunst. Requires dunst version greater than 1.5.0 due to dunstctl requirement.
 
 ## i3blocks
 * `battery` — displays battery status. Requires battery number as the argument
