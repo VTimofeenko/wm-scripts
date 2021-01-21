@@ -53,6 +53,13 @@ There is an [ebuild](https://github.com/VTimofeenko/nitratesky/blob/master/x11-m
     bindsym $mod+Shift+Tab exec --no-startup-id $helper_path/move_obj_to_output.sh container DP-0 DP-1 DVI-D-0
     ```
 * `dunstctl_toggle_notify.sh` — displays a notification and toggles the state of dunst. Requires dunst version greater than 1.5.0 due to dunstctl requirement.
+* `i3-helpers/scratchpad_terminal.sh` — checks if a scratchpad terminal is running and shows it. If it is not running — launches it. Syntax:
+
+    `bindsym <KEY_COMBO> scratchpad_terminal $TERMINAL <TERMINAL_TITLE>`
+
+    where `<TERMINAL_TITLE>` is the one i3 will move to scratchpad like so:
+
+    `for_window [title="$TERMINAL_TITLE"] move scratchpad`
 
 ## i3blocks
 * `battery` — displays battery status. Requires battery number as the argument
