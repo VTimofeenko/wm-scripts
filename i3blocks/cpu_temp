@@ -4,4 +4,4 @@ case $BLOCK_BUTTON in
 	1) notify-send "CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)" ;;
 esac
 
-sensors -j | jq -j "$1" && printf " C"
+sensors -j | jq -j "$1" && printf " C\n"

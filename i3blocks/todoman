@@ -7,4 +7,4 @@ LIST_NAME=${2}
 
 TASK_COUNT=$(/usr/bin/todo --porcelain list "${LIST_NAME}" | jq -j length)
 
-echo -n "${BLOCK_NAME}: ${TASK_COUNT} tasks"
+echo "${BLOCK_NAME}: ${TASK_COUNT} tasks"

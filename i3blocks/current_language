@@ -6,3 +6,4 @@ case $BLOCK_BUTTON in
 esac
 
 xkblayout-state print %s
+print "\n"

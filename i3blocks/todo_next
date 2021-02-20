@@ -27,6 +27,6 @@ if [ -n "$next_item" ]; then
     else
         color="#87ffaf"
     fi
-    printf "<span color='%s'>now doing: %s</span>" "$color" "$next_item"
+    printf "<span color='%s'>now doing: %s</span>\n" "$color" "$next_item"
 fi
 

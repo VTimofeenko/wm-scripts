@@ -1,0 +1,28 @@
+#!/bin/bash
+
+picom_pidfile="${XDG_CACHE_DIR}/picom.pid"
+picom_up=$(pgrep --pidfile "${picom_pidfile}")
+
+toggle_picom() {
+    if [ -n "$picom_up" ]; then
+        pkill --pidfile "${picom_pidfile}"
+        dunstify -a "picom" "Picom stopped"
+    else
+        setsid -f picom -b --write-pid-path "${picom_pidfile}"
+        dunstify -a "picom" "Picom started"
+    fi
+}
+case $BLOCK_BUTTON in
+    2) toggle_picom && pkill -SIGRTMIN+15 i3blocks
+esac
+
+span_color=""
+if [ -n "$picom_up" ]; then
+    span_color="#00ff00"
+    message="picom up"
+else
+    span_color="#ffffff"
+    message="picom down"
+fi
+
+printf "<span color='%s'>%s</span>\n" "$span_color" "$message"

@@ -28,4 +28,4 @@ elif [ "$battery_value" -eq -1 ]; then # At the time of writing, -1 = "Charging"
     icon=""
 fi
 
-printf "<span color='%s'>%s</span>" "$span_color" "$icon"
+printf "<span color='%s'>%s</span>\n" "$span_color" "$icon"

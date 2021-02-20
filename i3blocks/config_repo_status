@@ -7,5 +7,5 @@ case $BLOCK_BUTTON in
 esac
 
 if ! git --work-tree="${repo_path}" --git-dir="${repo_path}"/.git diff-index --quiet HEAD --; then
-    printf "<span color='#ff0000'>config dirty</span>"
+    printf "<span color='#ff0000'>config dirty</span>\n"
 fi

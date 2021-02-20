@@ -19,4 +19,4 @@ fi
 
 todo_items=$(perl -ne '(/^# TODO/ .. /^# (FOLLOWUP|DONE)/) && print' "$todo_file" | grep -cEv "^#|^$")
 
-printf "todo: %s items" "$todo_items"
+printf "todo: %s items\n" "$todo_items"
