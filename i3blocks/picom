@@ -1,15 +1,28 @@
 #!/bin/bash
 
 picom_pidfile="${XDG_CACHE_DIR}/picom.pid"
-picom_up=$(pgrep --pidfile "${picom_pidfile}")
+MY_SYSTEMCTL_CMD="systemctl --user"
+if ! [ -x "$(command -v systemctl)" ]; then
+    ${MY_SYSTEMCTL_CMD} is-active --quiet picom && picom_up="up"
+else
+    picom_up=$(pgrep --pidfile "${picom_pidfile}")
+fi
 
 toggle_picom() {
-    if [ -n "$picom_up" ]; then
-        pkill --pidfile "${picom_pidfile}"
-        dunstify -a "picom" "Picom stopped"
+    if ! [ -x "$(command -v systemctl)" ]; then
+        if ${MY_SYSTEMCTL_CMD} is-active --quiet picom; then
+            ${MY_SYSTEMCTL_CMD} stop picom
+        else
+            ${MY_SYSTEMCTL_CMD} start picom
+        fi
     else
-        setsid -f picom -b --write-pid-path "${picom_pidfile}"
-        dunstify -a "picom" "Picom started"
+        if [ -n "$picom_up" ]; then
+            pkill --pidfile "${picom_pidfile}"
+            dunstify -a "picom" "Picom stopped"
+        else
+            setsid -f picom -b --write-pid-path "${picom_pidfile}"
+            dunstify -a "picom" "Picom started"
+        fi
     fi
 }
 case $BLOCK_BUTTON in
